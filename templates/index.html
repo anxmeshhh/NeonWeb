@@ -4,11 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NeonWeb - Cyberpunk Web Development</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Syncopate:wght@400;700&family=Audiowide&family=Exo+2:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  
   <!-- Preloader -->
   <div class="preloader">
     <div class="loader">
@@ -70,12 +71,6 @@
           Get Started
           <i class="fas fa-arrow-right"></i>
         </a>
-        <div class="scroll-indicator">
-          <span>Scroll Down</span>
-          <div class="cyber-mouse">
-            <div class="wheel"></div>
-          </div>
-        </div>
       </div>
     </div>
     <div class="circuit-lines">
@@ -306,6 +301,7 @@
       <div class="section-header" data-aos="fade-up">
         <h2 class="cyber-heading"><span class="neon-text-green glitch-text" data-text="Order">Order</span> Your Website</h2>
         <p class="cyber-text">Fill out the form below to get started on your project. We'll get back to you within 24 hours to discuss your requirements in detail.</p>
+        <p class="cyber-text">Note: if the page gets refreshed after submitting....then we have recieved the form...just sit back and chill choom.</p>
       </div>
       
       <div class="order-form cyber-panel" data-aos="fade-up" data-aos-delay="200">
@@ -313,7 +309,9 @@
         <div class="panel-decoration"></div>
         <div class="panel-decoration"></div>
         <div class="panel-decoration"></div>
-        <form>
+        
+        <form method="POST" action="/submit">
+
           <div class="form-row">
             <div class="form-group">
               <label for="name">Name</label>
@@ -643,7 +641,8 @@
           <div class="panel-decoration"></div>
           <div class="panel-decoration"></div>
           <h3>Send Us a Message</h3>
-          <form>
+          <form id="contact-form" method="POST" action="/contact">
+
             <div class="form-group">
               <label for="contact-name">Name</label>
               <div class="cyber-input-container">
@@ -723,28 +722,6 @@
               <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
             </div>
           </div>
-          
-          <div class="chatbot">
-            <h4>Our Chatbot</h4>
-            <div class="chatbot-container">
-              <div class="chatbot-message">
-                <div class="chatbot-avatar">
-                  <i class="fas fa-robot"></i>
-                </div>
-                <div class="chatbot-text">
-                  Hi there! I'm NeonBot. How can I help you today?
-                </div>
-              </div>
-              
-              <div class="chatbot-input">
-                <div class="cyber-input-container">
-                  <input type="text" placeholder="Type your message...">
-                  <span class="cyber-input-border"></span>
-                </div>
-                <button class="cyber-btn cyber-btn-small">Send</button>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -763,10 +740,8 @@
           </div>
           <p>We build cutting-edge websites with smooth animations, innovative designs, and performance-driven technology. No upfront payment required – Pay after your website is delivered!</p>
           <div class="social-icons">
-            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+            <a href="https://www.instagram.com/anxmeshhh/?__pwa=1#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="https://github.com/anxmeshhh" class="social-icon"><i class="fab fa-github"></i></a>
           </div>
         </div>
         
@@ -776,7 +751,6 @@
             <li><a href="#about" class="cyber-link">About</a></li>
             <li><a href="#services" class="cyber-link">Services</a></li>
             <li><a href="#portfolio" class="cyber-link">Portfolio</a></li>
-            <li><a href="#" class="cyber-link">Careers</a></li>
             <li><a href="#contact" class="cyber-link">Contact</a></li>
           </ul>
         </div>
@@ -787,19 +761,8 @@
             <li><a href="#" class="cyber-link">Web Development</a></li>
             <li><a href="#" class="cyber-link">UI/UX Design</a></li>
             <li><a href="#" class="cyber-link">E-Commerce</a></li>
-            <li><a href="#" class="cyber-link">AI Integration</a></li>
+            <li><a href="#" class="cyber-link">AI MLIntegration</a></li>
             <li><a href="#" class="cyber-link">Maintenance</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer-links">
-          <h4 class="neon-text-purple">Resources</h4>
-          <ul>
-            <li><a href="#" class="cyber-link">Blog</a></li>
-            <li><a href="#" class="cyber-link">Documentation</a></li>
-            <li><a href="#" class="cyber-link">FAQ</a></li>
-            <li><a href="#" class="cyber-link">Support</a></li>
-            <li><a href="#" class="cyber-link">Privacy Policy</a></li>
           </ul>
         </div>
       </div>
