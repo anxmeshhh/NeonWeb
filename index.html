@@ -3,14 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NeonWeb - Crafting Futuristic Websites with Precision</title>
+  <title>NeonWeb - Cyberpunk Web Development</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Syncopate:wght@400;700&family=Audiowide&family=Exo+2:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="loader">
+      <div class="cyber-spinner">
+        <div class="cyber-spinner-inner"></div>
+      </div>
+      <h2 class="loading-text">
+        <span>L</span><span>o</span><span>a</span><span>d</span><span>i</span><span>n</span><span>g</span>
+      </h2>
+    </div>
+  </div>
+
+  <!-- Noise Overlay -->
+  <div class="noise"></div>
+  
   <!-- Scanline Effect -->
   <div class="scanline"></div>
+  
+  <!-- CRT Flicker -->
+  <div class="crt-flicker"></div>
   
   <!-- Navbar -->
   <header>
@@ -18,7 +36,7 @@
       <div class="container">
         <div class="logo">
           <a href="#home">
-            <span class="neon-text-blue">Neon</span><span class="neon-text-pink">Web</span>
+            <span class="neon-text-blue glitch-text" data-text="Neon">Neon</span><span class="neon-text-pink glitch-text" data-text="Web">Web</span>
           </a>
         </div>
         <input type="checkbox" id="nav-toggle" class="nav-toggle">
@@ -26,13 +44,13 @@
           <span></span>
         </label>
         <ul class="nav-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#order">Order</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#" class="btn btn-outline">Get Started</a></li>
+          <li><a href="#home" class="cyber-link">Home</a></li>
+          <li><a href="#about" class="cyber-link">About</a></li>
+          <li><a href="#services" class="cyber-link">Services</a></li>
+          <li><a href="#order" class="cyber-link">Order</a></li>
+          <li><a href="#portfolio" class="cyber-link">Portfolio</a></li>
+          <li><a href="#contact" class="cyber-link">Contact</a></li>
+          <li><a href="#" class="cyber-btn">Get Started</a></li>
         </ul>
       </div>
     </nav>
@@ -40,41 +58,56 @@
 
   <!-- Hero Section -->
   <section id="home" class="hero">
-    <div class="hero-grid"></div>
+    <div class="cyber-grid"></div>
+    <div class="cyber-dots"></div>
     <div class="container">
       <div class="hero-content">
-        <div class="badge">NEXT-GEN WEB DEVELOPMENT</div>
-        <h1 class="glitch-text">Crafting Futuristic Websites <br> with Precision!</h1>
-        <p>We build cutting-edge digital experiences with smooth animations, innovative designs, and performance-driven technology.</p>
-        <a href="#order" class="btn btn-primary neon-button">
+        <div class="cyber-badge">NEXT-GEN WEB DEVELOPMENT</div>
+        <h1 class="glitch-text" data-text="Crafting Futuristic Websites with Precision!">Crafting Futuristic Websites <br> with Precision!</h1>
+        <p class="cyber-text">We build cutting-edge digital experiences with smooth animations, innovative designs, and performance-driven technology.</p>
+        <a href="#order" class="cyber-btn cyber-btn-large">
+          <span></span><span></span><span></span><span></span>
           Get Started
           <i class="fas fa-arrow-right"></i>
         </a>
         <div class="scroll-indicator">
           <span>Scroll Down</span>
-          <div class="mouse">
+          <div class="cyber-mouse">
             <div class="wheel"></div>
           </div>
         </div>
       </div>
     </div>
+    <div class="circuit-lines">
+      <div class="circuit-line"></div>
+      <div class="circuit-line"></div>
+      <div class="circuit-line"></div>
+      <div class="circuit-line"></div>
+      <div class="circuit-line"></div>
+    </div>
+    <div class="hero-particles"></div>
   </section>
 
   <!-- About Section -->
   <section id="about" class="about">
     <div class="container">
-      <div class="section-header">
-        <h2><span class="neon-text-purple">About</span> NeonWeb</h2>
-        <p>We are a cutting-edge web development service specializing in creating futuristic, high-performance websites that stand out in the digital landscape.</p>
+      <div class="section-header" data-aos="fade-up">
+        <h2 class="cyber-heading"><span class="neon-text-purple glitch-text" data-text="About">About</span> NeonWeb</h2>
+        <p class="cyber-text">We are a cutting-edge web development service specializing in creating futuristic, high-performance websites that stand out in the digital landscape.</p>
       </div>
       
-      <div class="about-content neon-border">
+      <div class="about-content cyber-panel" data-aos="fade-up" data-aos-delay="200">
+        <div class="panel-decoration"></div>
+        <div class="panel-decoration"></div>
+        <div class="panel-decoration"></div>
+        <div class="panel-decoration"></div>
         <p>At NeonWeb, we combine technical expertise with creative design to deliver websites that not only look stunning but also perform exceptionally well. Our team specializes in creating immersive digital experiences with smooth animations, interactive elements, and cutting-edge technologies.</p>
         <p>We believe in putting our clients first, which is why we only accept payment after project delivery. This ensures that you're completely satisfied with our work before making any financial commitment.</p>
       </div>
       
       <div class="features-grid">
-        <div class="feature-card">
+        <div class="feature-card cyber-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="card-glitch"></div>
           <div class="feature-icon">
             <i class="fas fa-code neon-text-cyan"></i>
           </div>
@@ -84,7 +117,8 @@
           </div>
         </div>
         
-        <div class="feature-card">
+        <div class="feature-card cyber-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="card-glitch"></div>
           <div class="feature-icon">
             <i class="fab fa-github neon-text-purple"></i>
           </div>
@@ -94,7 +128,8 @@
           </div>
         </div>
         
-        <div class="feature-card">
+        <div class="feature-card cyber-card" data-aos="fade-up" data-aos-delay="500">
+          <div class="card-glitch"></div>
           <div class="feature-icon">
             <i class="fas fa-bolt neon-text-pink"></i>
           </div>
@@ -104,7 +139,8 @@
           </div>
         </div>
         
-        <div class="feature-card">
+        <div class="feature-card cyber-card" data-aos="fade-up" data-aos-delay="600">
+          <div class="card-glitch"></div>
           <div class="feature-icon">
             <i class="fas fa-database neon-text-green"></i>
           </div>
@@ -120,13 +156,14 @@
   <!-- Services Section -->
   <section id="services" class="services">
     <div class="container">
-      <div class="section-header">
-        <h2><span class="neon-text-blue">Our</span> Services</h2>
-        <p>We offer a wide range of web development services to meet your specific needs. From simple portfolio websites to complex e-commerce solutions, we've got you covered.</p>
+      <div class="section-header" data-aos="fade-up">
+        <h2 class="cyber-heading"><span class="neon-text-blue glitch-text" data-text="Our">Our</span> Services</h2>
+        <p class="cyber-text">We offer a wide range of web development services to meet your specific needs. From simple portfolio websites to complex e-commerce solutions, we've got you covered.</p>
       </div>
       
       <div class="services-grid">
-        <div class="service-card">
+        <div class="service-card cyber-card" data-aos="zoom-in" data-aos-delay="100">
+          <div class="card-glitch"></div>
           <div class="service-icon">
             <i class="fas fa-laptop-code neon-text-cyan"></i>
           </div>
@@ -134,7 +171,8 @@
           <p>Showcase your work with interactive and visually stunning portfolio websites.</p>
         </div>
         
-        <div class="service-card">
+        <div class="service-card cyber-card" data-aos="zoom-in" data-aos-delay="200">
+          <div class="card-glitch"></div>
           <div class="service-icon">
             <i class="fas fa-building neon-text-purple"></i>
           </div>
@@ -142,7 +180,8 @@
           <p>Establish your online presence with professional business websites.</p>
         </div>
         
-        <div class="service-card">
+        <div class="service-card cyber-card" data-aos="zoom-in" data-aos-delay="300">
+          <div class="card-glitch"></div>
           <div class="service-icon">
             <i class="fas fa-shopping-cart neon-text-pink"></i>
           </div>
@@ -150,7 +189,8 @@
           <p>Sell your products online with secure and user-friendly e-commerce solutions.</p>
         </div>
         
-        <div class="service-card">
+        <div class="service-card cyber-card" data-aos="zoom-in" data-aos-delay="400">
+          <div class="card-glitch"></div>
           <div class="service-icon">
             <i class="fas fa-robot neon-text-green"></i>
           </div>
@@ -158,7 +198,8 @@
           <p>Enhance user experience with AI-powered features and functionalities.</p>
         </div>
         
-        <div class="service-card">
+        <div class="service-card cyber-card" data-aos="zoom-in" data-aos-delay="500">
+          <div class="card-glitch"></div>
           <div class="service-icon">
             <i class="fas fa-database neon-text-yellow"></i>
           </div>
@@ -166,7 +207,8 @@
           <p>Robust database solutions for storing and managing your data efficiently.</p>
         </div>
         
-        <div class="service-card">
+        <div class="service-card cyber-card" data-aos="zoom-in" data-aos-delay="600">
+          <div class="card-glitch"></div>
           <div class="service-icon">
             <i class="fas fa-server neon-text-blue"></i>
           </div>
@@ -175,13 +217,17 @@
         </div>
       </div>
       
-      <div class="section-header pricing-header">
-        <h2><span class="neon-text-pink">Pricing</span> Plans</h2>
-        <p>Choose the perfect plan that fits your project requirements and budget. All plans include responsive design and SEO optimization.</p>
+      <div class="section-header pricing-header" data-aos="fade-up">
+        <h2 class="cyber-heading"><span class="neon-text-pink glitch-text" data-text="Pricing">Pricing</span> Plans</h2>
+        <p class="cyber-text">Choose the perfect plan that fits your project requirements and budget. All plans include responsive design and SEO optimization.</p>
       </div>
       
       <div class="pricing-grid">
-        <div class="pricing-card neon-border-cyan">
+        <div class="pricing-card cyber-panel cyan-panel" data-aos="flip-left" data-aos-delay="100">
+          <div class="panel-decoration"></div>
+          <div class="panel-decoration"></div>
+          <div class="panel-decoration"></div>
+          <div class="panel-decoration"></div>
           <div class="pricing-header">
             <h3 class="neon-text-cyan">Basic</h3>
             <p>Perfect for small personal websites</p>
@@ -194,11 +240,18 @@
             <li><i class="fas fa-check neon-text-cyan"></i> Contact Form</li>
             <li><i class="fas fa-check neon-text-cyan"></i> SEO Optimization</li>
           </ul>
-          <a href="#order" class="btn btn-outline-cyan neon-button">Get Started</a>
+          <a href="#order" class="cyber-btn cyan-btn">
+            <span></span><span></span><span></span><span></span>
+            Get Started
+          </a>
         </div>
         
-        <div class="pricing-card neon-border-purple recommended">
+        <div class="pricing-card cyber-panel purple-panel recommended" data-aos="flip-left" data-aos-delay="300">
           <div class="recommended-badge">Most Popular</div>
+          <div class="panel-decoration"></div>
+          <div class="panel-decoration"></div>
+          <div class="panel-decoration"></div>
+          <div class="panel-decoration"></div>
           <div class="pricing-header">
             <h3 class="neon-text-purple">Standard</h3>
             <p>Ideal for businesses and portfolios</p>
@@ -212,10 +265,17 @@
             <li><i class="fas fa-check neon-text-purple"></i> Social Media Integration</li>
             <li><i class="fas fa-check neon-text-purple"></i> Performance Optimization</li>
           </ul>
-          <a href="#order" class="btn btn-outline-purple neon-button">Get Started</a>
+          <a href="#order" class="cyber-btn purple-btn">
+            <span></span><span></span><span></span><span></span>
+            Get Started
+          </a>
         </div>
         
-        <div class="pricing-card neon-border-pink">
+        <div class="pricing-card cyber-panel pink-panel" data-aos="flip-left" data-aos-delay="500">
+          <div class="panel-decoration"></div>
+          <div class="panel-decoration"></div>
+          <div class="panel-decoration"></div>
+          <div class="panel-decoration"></div>
           <div class="pricing-header">
             <h3 class="neon-text-pink">Premium</h3>
             <p>Complete solution for complex projects</p>
@@ -231,7 +291,10 @@
             <li><i class="fas fa-check neon-text-pink"></i> AI Integration</li>
             <li><i class="fas fa-check neon-text-pink"></i> 1 Year Support & Maintenance</li>
           </ul>
-          <a href="#order" class="btn btn-outline-pink neon-button">Get Started</a>
+          <a href="#order" class="cyber-btn pink-btn">
+            <span></span><span></span><span></span><span></span>
+            Get Started
+          </a>
         </div>
       </div>
     </div>
@@ -240,62 +303,86 @@
   <!-- Order Form Section -->
   <section id="order" class="order">
     <div class="container">
-      <div class="section-header">
-        <h2><span class="neon-text-green">Order</span> Your Website</h2>
-        <p>Fill out the form below to get started on your project. We'll get back to you within 24 hours to discuss your requirements in detail.</p>
+      <div class="section-header" data-aos="fade-up">
+        <h2 class="cyber-heading"><span class="neon-text-green glitch-text" data-text="Order">Order</span> Your Website</h2>
+        <p class="cyber-text">Fill out the form below to get started on your project. We'll get back to you within 24 hours to discuss your requirements in detail.</p>
       </div>
       
-      <div class="order-form neon-border">
+      <div class="order-form cyber-panel" data-aos="fade-up" data-aos-delay="200">
+        <div class="panel-decoration"></div>
+        <div class="panel-decoration"></div>
+        <div class="panel-decoration"></div>
+        <div class="panel-decoration"></div>
         <form>
           <div class="form-row">
             <div class="form-group">
               <label for="name">Name</label>
-              <input type="text" id="name" name="name" placeholder="Your name" required>
+              <div class="cyber-input-container">
+                <input type="text" id="name" name="name" placeholder="Your name" required>
+                <span class="cyber-input-border"></span>
+              </div>
             </div>
             <div class="form-group">
               <label for="email">Email</label>
-              <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+              <div class="cyber-input-container">
+                <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                <span class="cyber-input-border"></span>
+              </div>
             </div>
           </div>
           
           <div class="form-row">
             <div class="form-group">
               <label for="website-type">Website Type</label>
-              <select id="website-type" name="website-type" required>
-                <option value="" disabled selected>Select website type</option>
-                <option value="portfolio">Portfolio</option>
-                <option value="business">Business</option>
-                <option value="ecommerce">E-Commerce</option>
-                <option value="blog">Blog</option>
-                <option value="ai-integrated">AI-Integrated</option>
-                <option value="other">Other</option>
-              </select>
+              <div class="cyber-select-container">
+                <select id="website-type" name="website-type" required>
+                  <option value="" disabled selected>Select website type</option>
+                  <option value="portfolio">Portfolio</option>
+                  <option value="business">Business</option>
+                  <option value="ecommerce">E-Commerce</option>
+                  <option value="blog">Blog</option>
+                  <option value="ai-integrated">AI-Integrated</option>
+                  <option value="other">Other</option>
+                </select>
+                <span class="cyber-select-border"></span>
+              </div>
             </div>
             <div class="form-group">
               <label for="budget">Budget Range</label>
-              <select id="budget" name="budget" required>
-                <option value="" disabled selected>Select budget range</option>
-                <option value="$1000-$2000">$1000-$2000</option>
-                <option value="$2000-$3000">$2000-$3000</option>
-                <option value="$3000-$5000">$3000-$5000</option>
-                <option value="$5000+">$5000+</option>
-              </select>
+              <div class="cyber-select-container">
+                <select id="budget" name="budget" required>
+                  <option value="" disabled selected>Select budget range</option>
+                  <option value="$1000-$2000">$1000-$2000</option>
+                  <option value="$2000-$3000">$2000-$3000</option>
+                  <option value="$3000-$5000">$3000-$5000</option>
+                  <option value="$5000+">$5000+</option>
+                </select>
+                <span class="cyber-select-border"></span>
+              </div>
             </div>
           </div>
           
           <div class="form-group">
             <label for="features">Features & Requirements</label>
-            <textarea id="features" name="features" placeholder="Describe the features and functionality you need..." required></textarea>
+            <div class="cyber-textarea-container">
+              <textarea id="features" name="features" placeholder="Describe the features and functionality you need..." required></textarea>
+              <span class="cyber-textarea-border"></span>
+            </div>
           </div>
           
           <div class="form-group">
             <label for="deadline">Deadline</label>
-            <input type="date" id="deadline" name="deadline" required>
+            <div class="cyber-input-container">
+              <input type="date" id="deadline" name="deadline" required>
+              <span class="cyber-input-border"></span>
+            </div>
           </div>
           
           <div class="form-group checkbox-group">
-            <input type="checkbox" id="github-integration" name="github-integration">
-            <label for="github-integration">GitHub Integration</label>
+            <div class="cyber-checkbox">
+              <input type="checkbox" id="github-integration" name="github-integration">
+              <label for="github-integration">GitHub Integration</label>
+            </div>
             <p class="form-description">Would you like us to set up GitHub integration for your project?</p>
           </div>
           
@@ -303,7 +390,10 @@
             <p><span class="neon-text-purple">No upfront payment required</span> – Pay after your website is delivered!</p>
           </div>
           
-          <button type="submit" class="btn btn-primary neon-button">Submit Order</button>
+          <button type="submit" class="cyber-btn cyber-btn-large">
+            <span></span><span></span><span></span><span></span>
+            Submit Order
+          </button>
         </form>
       </div>
     </div>
@@ -312,22 +402,23 @@
   <!-- Portfolio Section -->
   <section id="portfolio" class="portfolio">
     <div class="container">
-      <div class="section-header">
-        <h2><span class="neon-text-cyan">Our</span> Portfolio</h2>
-        <p>Check out some of our recent projects. Each website is custom-built to meet the specific needs and goals of our clients.</p>
+      <div class="section-header" data-aos="fade-up">
+        <h2 class="cyber-heading"><span class="neon-text-cyan glitch-text" data-text="Our">Our</span> Portfolio</h2>
+        <p class="cyber-text">Check out some of our recent projects. Each website is custom-built to meet the specific needs and goals of our clients.</p>
       </div>
       
-      <div class="portfolio-filters">
-        <button class="portfolio-filter active" data-filter="all">All</button>
-        <button class="portfolio-filter" data-filter="business">Business</button>
-        <button class="portfolio-filter" data-filter="portfolio">Portfolio</button>
-        <button class="portfolio-filter" data-filter="ecommerce">E-Commerce</button>
-        <button class="portfolio-filter" data-filter="ai">AI</button>
-        <button class="portfolio-filter" data-filter="blog">Blog</button>
+      <div class="portfolio-filters" data-aos="fade-up" data-aos-delay="200">
+        <button class="cyber-filter active" data-filter="all">All</button>
+        <button class="cyber-filter" data-filter="business">Business</button>
+        <button class="cyber-filter" data-filter="portfolio">Portfolio</button>
+        <button class="cyber-filter" data-filter="ecommerce">E-Commerce</button>
+        <button class="cyber-filter" data-filter="ai">AI</button>
+        <button class="cyber-filter" data-filter="blog">Blog</button>
       </div>
       
       <div class="portfolio-grid">
-        <div class="portfolio-item" data-category="business">
+        <div class="portfolio-item cyber-card" data-category="business" data-aos="fade-up" data-aos-delay="100">
+          <div class="card-glitch"></div>
           <div class="portfolio-image">
             <img src="https://via.placeholder.com/600x400/0a0a0a/00ffff?text=TechVision" alt="TechVision">
             <div class="portfolio-overlay">
@@ -340,11 +431,12 @@
           <div class="portfolio-content">
             <h3 class="neon-text-blue">TechVision</h3>
             <p>A futuristic business website with interactive elements and smooth animations.</p>
-            <span class="portfolio-category">Business</span>
+            <span class="cyber-badge">Business</span>
           </div>
         </div>
         
-        <div class="portfolio-item" data-category="portfolio">
+        <div class="portfolio-item cyber-card" data-category="portfolio" data-aos="fade-up" data-aos-delay="200">
+          <div class="card-glitch"></div>
           <div class="portfolio-image">
             <img src="https://via.placeholder.com/600x400/0a0a0a/ff00ff?text=PixelArt" alt="PixelArt Portfolio">
             <div class="portfolio-overlay">
@@ -357,11 +449,12 @@
           <div class="portfolio-content">
             <h3 class="neon-text-blue">PixelArt Portfolio</h3>
             <p>A creative portfolio website for a digital artist with gallery and hover effects.</p>
-            <span class="portfolio-category">Portfolio</span>
+            <span class="cyber-badge">Portfolio</span>
           </div>
         </div>
         
-        <div class="portfolio-item" data-category="ecommerce">
+        <div class="portfolio-item cyber-card" data-category="ecommerce" data-aos="fade-up" data-aos-delay="300">
+          <div class="card-glitch"></div>
           <div class="portfolio-image">
             <img src="https://via.placeholder.com/600x400/0a0a0a/9900ff?text=NeonShop" alt="NeonShop">
             <div class="portfolio-overlay">
@@ -374,11 +467,12 @@
           <div class="portfolio-content">
             <h3 class="neon-text-blue">NeonShop</h3>
             <p>A cyberpunk-themed e-commerce platform with secure payment integration.</p>
-            <span class="portfolio-category">E-Commerce</span>
+            <span class="cyber-badge">E-Commerce</span>
           </div>
         </div>
         
-        <div class="portfolio-item" data-category="ai">
+        <div class="portfolio-item cyber-card" data-category="ai" data-aos="fade-up" data-aos-delay="400">
+          <div class="card-glitch"></div>
           <div class="portfolio-image">
             <img src="https://via.placeholder.com/600x400/0a0a0a/00ff00?text=AI+Assistant" alt="AI Assistant">
             <div class="portfolio-overlay">
@@ -391,11 +485,12 @@
           <div class="portfolio-content">
             <h3 class="neon-text-blue">AI Assistant</h3>
             <p>An AI-integrated web application with natural language processing capabilities.</p>
-            <span class="portfolio-category">AI</span>
+            <span class="cyber-badge">AI</span>
           </div>
         </div>
         
-        <div class="portfolio-item" data-category="blog">
+        <div class="portfolio-item cyber-card" data-category="blog" data-aos="fade-up" data-aos-delay="500">
+          <div class="card-glitch"></div>
           <div class="portfolio-image">
             <img src="https://via.placeholder.com/600x400/0a0a0a/ffff00?text=CyberBlog" alt="CyberBlog">
             <div class="portfolio-overlay">
@@ -408,11 +503,12 @@
           <div class="portfolio-content">
             <h3 class="neon-text-blue">CyberBlog</h3>
             <p>A tech blog with advanced filtering and search functionality.</p>
-            <span class="portfolio-category">Blog</span>
+            <span class="cyber-badge">Blog</span>
           </div>
         </div>
         
-        <div class="portfolio-item" data-category="business">
+        <div class="portfolio-item cyber-card" data-category="business" data-aos="fade-up" data-aos-delay="600">
+          <div class="card-glitch"></div>
           <div class="portfolio-image">
             <img src="https://via.placeholder.com/600x400/0a0a0a/00ffff?text=DataViz" alt="DataViz Dashboard">
             <div class="portfolio-overlay">
@@ -425,7 +521,7 @@
           <div class="portfolio-content">
             <h3 class="neon-text-blue">DataViz Dashboard</h3>
             <p>An interactive data visualization dashboard for business analytics.</p>
-            <span class="portfolio-category">Business</span>
+            <span class="cyber-badge">Business</span>
           </div>
         </div>
       </div>
@@ -435,12 +531,16 @@
   <!-- Testimonials Section -->
   <section class="testimonials">
     <div class="container">
-      <div class="section-header">
-        <h2><span class="neon-text-pink">Client</span> Testimonials</h2>
-        <p>Don't just take our word for it. Here's what our clients have to say about their experience working with NeonWeb.</p>
+      <div class="section-header" data-aos="fade-up">
+        <h2 class="cyber-heading"><span class="neon-text-pink glitch-text" data-text="Client">Client</span> Testimonials</h2>
+        <p class="cyber-text">Don't just take our word for it. Here's what our clients have to say about their experience working with NeonWeb.</p>
       </div>
       
-      <div class="testimonials-slider neon-border">
+      <div class="testimonials-slider cyber-panel" data-aos="fade-up" data-aos-delay="200">
+        <div class="panel-decoration"></div>
+        <div class="panel-decoration"></div>
+        <div class="panel-decoration"></div>
+        <div class="panel-decoration"></div>
         <div class="quote-icon">
           <i class="fas fa-quote-left neon-text-purple"></i>
         </div>
@@ -479,6 +579,8 @@
               </div>
             </div>
             <div class="testimonial-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
@@ -529,35 +631,55 @@
   <!-- Contact Section -->
   <section id="contact" class="contact">
     <div class="container">
-      <div class="section-header">
-        <h2><span class="neon-text-cyan">Contact</span> Us</h2>
-        <p>Have a question or ready to start your project? Get in touch with us and we'll get back to you as soon as possible.</p>
+      <div class="section-header" data-aos="fade-up">
+        <h2 class="cyber-heading"><span class="neon-text-cyan glitch-text" data-text="Contact">Contact</span> Us</h2>
+        <p class="cyber-text">Have a question or ready to start your project? Get in touch with us and we'll get back to you as soon as possible.</p>
       </div>
       
       <div class="contact-grid">
-        <div class="contact-form neon-border">
+        <div class="contact-form cyber-panel" data-aos="fade-right" data-aos-delay="200">
+          <div class="panel-decoration"></div>
+          <div class="panel-decoration"></div>
+          <div class="panel-decoration"></div>
+          <div class="panel-decoration"></div>
           <h3>Send Us a Message</h3>
           <form>
             <div class="form-group">
               <label for="contact-name">Name</label>
-              <input type="text" id="contact-name" name="contact-name" placeholder="Your name" required>
+              <div class="cyber-input-container">
+                <input type="text" id="contact-name" name="contact-name" placeholder="Your name" required>
+                <span class="cyber-input-border"></span>
+              </div>
             </div>
             
             <div class="form-group">
               <label for="contact-email">Email</label>
-              <input type="email" id="contact-email" name="contact-email" placeholder="your.email@example.com" required>
+              <div class="cyber-input-container">
+                <input type="email" id="contact-email" name="contact-email" placeholder="your.email@example.com" required>
+                <span class="cyber-input-border"></span>
+              </div>
             </div>
             
             <div class="form-group">
               <label for="contact-message">Message</label>
-              <textarea id="contact-message" name="contact-message" placeholder="Your message..." required></textarea>
+              <div class="cyber-textarea-container">
+                <textarea id="contact-message" name="contact-message" placeholder="Your message..." required></textarea>
+                <span class="cyber-textarea-border"></span>
+              </div>
             </div>
             
-            <button type="submit" class="btn btn-primary neon-button">Send Message</button>
+            <button type="submit" class="cyber-btn cyber-btn-large">
+              <span></span><span></span><span></span><span></span>
+              Send Message
+            </button>
           </form>
         </div>
         
-        <div class="contact-info neon-border">
+        <div class="contact-info cyber-panel" data-aos="fade-left" data-aos-delay="200">
+          <div class="panel-decoration"></div>
+          <div class="panel-decoration"></div>
+          <div class="panel-decoration"></div>
+          <div class="panel-decoration"></div>
           <h3>Get in Touch</h3>
           
           <div class="contact-methods">
@@ -615,8 +737,11 @@
               </div>
               
               <div class="chatbot-input">
-                <input type="text" placeholder="Type your message...">
-                <button class="btn btn-small">Send</button>
+                <div class="cyber-input-container">
+                  <input type="text" placeholder="Type your message...">
+                  <span class="cyber-input-border"></span>
+                </div>
+                <button class="cyber-btn cyber-btn-small">Send</button>
               </div>
             </div>
           </div>
@@ -627,12 +752,13 @@
 
   <!-- Footer -->
   <footer class="footer">
+    <div class="cyber-grid-footer"></div>
     <div class="container">
       <div class="footer-grid">
         <div class="footer-about">
           <div class="logo">
             <a href="#home">
-              <span class="neon-text-blue">Neon</span><span class="neon-text-pink">Web</span>
+              <span class="neon-text-blue glitch-text" data-text="Neon">Neon</span><span class="neon-text-pink glitch-text" data-text="Web">Web</span>
             </a>
           </div>
           <p>We build cutting-edge websites with smooth animations, innovative designs, and performance-driven technology. No upfront payment required – Pay after your website is delivered!</p>
@@ -647,33 +773,33 @@
         <div class="footer-links">
           <h4 class="neon-text-purple">Company</h4>
           <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#">Careers</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about" class="cyber-link">About</a></li>
+            <li><a href="#services" class="cyber-link">Services</a></li>
+            <li><a href="#portfolio" class="cyber-link">Portfolio</a></li>
+            <li><a href="#" class="cyber-link">Careers</a></li>
+            <li><a href="#contact" class="cyber-link">Contact</a></li>
           </ul>
         </div>
         
         <div class="footer-links">
           <h4 class="neon-text-purple">Services</h4>
           <ul>
-            <li><a href="#">Web Development</a></li>
-            <li><a href="#">UI/UX Design</a></li>
-            <li><a href="#">E-Commerce</a></li>
-            <li><a href="#">AI Integration</a></li>
-            <li><a href="#">Maintenance</a></li>
+            <li><a href="#" class="cyber-link">Web Development</a></li>
+            <li><a href="#" class="cyber-link">UI/UX Design</a></li>
+            <li><a href="#" class="cyber-link">E-Commerce</a></li>
+            <li><a href="#" class="cyber-link">AI Integration</a></li>
+            <li><a href="#" class="cyber-link">Maintenance</a></li>
           </ul>
         </div>
         
         <div class="footer-links">
           <h4 class="neon-text-purple">Resources</h4>
           <ul>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Documentation</a></li>
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#">Support</a></li>
-            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#" class="cyber-link">Blog</a></li>
+            <li><a href="#" class="cyber-link">Documentation</a></li>
+            <li><a href="#" class="cyber-link">FAQ</a></li>
+            <li><a href="#" class="cyber-link">Support</a></li>
+            <li><a href="#" class="cyber-link">Privacy Policy</a></li>
           </ul>
         </div>
       </div>
@@ -688,6 +814,15 @@
   </footer>
 
   <script>
+    // Preloader
+    window.addEventListener('load', function() {
+      const preloader = document.querySelector('.preloader');
+      preloader.classList.add('preloader-finish');
+      setTimeout(() => {
+        preloader.style.display = 'none';
+      }, 1500);
+    });
+
     // Simple JavaScript for the testimonial slider
     document.addEventListener('DOMContentLoaded', function() {
       const slides = document.querySelectorAll('.testimonial-slide');
@@ -714,7 +849,7 @@
       });
       
       // Portfolio filtering
-      const filterBtns = document.querySelectorAll('.portfolio-filter');
+      const filterBtns = document.querySelectorAll('.cyber-filter');
       const portfolioItems = document.querySelectorAll('.portfolio-item');
       
       filterBtns.forEach(btn => {
@@ -733,6 +868,52 @@
           });
         });
       });
+
+      // Animate on scroll
+      const animateElements = document.querySelectorAll('[data-aos]');
+      
+      const checkIfInView = () => {
+        animateElements.forEach(element => {
+          const elementPosition = element.getBoundingClientRect();
+          const windowHeight = window.innerHeight;
+          
+          if (elementPosition.top < windowHeight * 0.85) {
+            const delay = element.getAttribute('data-aos-delay') || 0;
+            setTimeout(() => {
+              element.classList.add('aos-animate');
+            }, delay);
+          }
+        });
+      };
+      
+      window.addEventListener('scroll', checkIfInView);
+      checkIfInView(); // Check on load
+      
+      // Hero particles
+      const heroParticles = document.querySelector('.hero-particles');
+      
+      for (let i = 0; i < 50; i++) {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+        
+        // Random position
+        particle.style.left = Math.random() * 100 + 'vw';
+        particle.style.top = Math.random() * 100 + 'vh';
+        
+        // Random size
+        const size = Math.random() * 5 + 1;
+        particle.style.width = size + 'px';
+        particle.style.height = size + 'px';
+        
+        // Random color
+        const colors = ['#ff00ff', '#00ffff', '#9900ff', '#00ff00', '#ffff00'];
+        particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        
+        // Random animation duration
+        particle.style.animationDuration = Math.random() * 10 + 5 + 's';
+        
+        heroParticles.appendChild(particle);
+      }
     });
   </script>
 </body>
