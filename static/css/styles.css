@@ -259,6 +259,18 @@ section {
   }
 }
 
+/* Digital Rain Effect */
+#digital-rain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
 .neon-text-blue {
   color: var(--cyber-blue);
   text-shadow: 0 0 5px var(--cyber-blue), 0 0 10px var(--cyber-blue), 0 0 20px var(--cyber-blue), 0 0 40px
@@ -439,6 +451,16 @@ section {
   border-color: rgba(0, 255, 255, 0.4);
 }
 
+.reveal-panel {
+  transform: perspective(1000px) rotateX(5deg);
+  transition: transform 0.5s ease, box-shadow 0.5s ease, border-color 0.5s ease;
+}
+
+.reveal-panel:hover {
+  transform: perspective(1000px) rotateX(0deg) translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 255, 255, 0.3);
+}
+
 .panel-decoration {
   position: absolute;
   background: linear-gradient(45deg, var(--cyber-blue), transparent);
@@ -531,6 +553,16 @@ section {
 .cyber-card:hover {
   transform: translateY(-15px) scale(1.03);
   box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+  border-color: rgba(0, 255, 255, 0.6);
+}
+
+.hover-float {
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.5s ease, border-color 0.5s ease;
+}
+
+.hover-float:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 15px 30px rgba(0, 255, 255, 0.3);
   border-color: rgba(0, 255, 255, 0.6);
 }
 
@@ -708,6 +740,22 @@ section {
 .cyber-btn-small {
   padding: 0.5rem 1rem;
   font-size: 0.875rem;
+}
+
+.pulse-btn {
+  animation: pulse-animation 2s infinite;
+}
+
+@keyframes pulse-animation {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 255, 255, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(0, 255, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 255, 255, 0);
+  }
 }
 
 .cyan-btn {
@@ -1155,6 +1203,24 @@ section {
   margin-right: auto;
 }
 
+.tagline {
+  font-size: 1.4rem;
+  color: var(--text-color);
+  margin-bottom: 2.5rem;
+  max-width: 800px;
+  line-height: 1.8;
+  animation: fade-in 1.5s ease 0.5s both;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .scroll-indicator {
   position: absolute;
   bottom: 2rem;
@@ -1166,15 +1232,6 @@ section {
   color: var(--text-color-muted);
   font-size: 0.875rem;
   animation: fade-in 2s ease 1s both;
-}
-
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
 }
 
 .cyber-mouse {
@@ -1236,9 +1293,16 @@ section {
   margin-bottom: 1rem;
 }
 
+/* Why Choose Us Section */
+.why-choose-us {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none"/><path d="M0,0 L100,100 M100,0 L0,100" stroke="rgba(0, 255, 255, 0.1)" stroke-width="1"/></svg>');
+  background-size: cover, 20px 20px;
+}
+
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
 }
 
@@ -1254,136 +1318,6 @@ section {
 
 .feature-content p {
   color: var(--text-color-muted);
-}
-
-/* Services Section */
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 4rem;
-}
-
-.service-icon {
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.service-card h3 {
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
-}
-
-.service-card p {
-  color: var(--text-color-muted);
-}
-
-.pricing-header {
-  margin-top: 4rem;
-}
-
-.pricing-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-}
-
-.pricing-card {
-  position: relative;
-}
-
-.pricing-card.recommended {
-  transform: translateY(-20px);
-}
-
-.recommended-badge {
-  position: absolute;
-  top: -15px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--cyber-purple);
-  color: var(--bg-color);
-  padding: 0.5rem 1rem;
-  border-radius: 2px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  z-index: 1;
-  box-shadow: 0 0 15px var(--cyber-purple);
-  animation: badge-glow 2s infinite alternate;
-}
-
-@keyframes badge-glow {
-  0% {
-    box-shadow: 0 0 5px var(--cyber-purple);
-  }
-  100% {
-    box-shadow: 0 0 15px var(--cyber-purple);
-  }
-}
-
-.pricing-header h3 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.pricing-header p {
-  color: var(--text-color-muted);
-  margin-bottom: 1.5rem;
-}
-
-.pricing-price {
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  animation: price-pulse 2s infinite alternate;
-}
-
-@keyframes price-pulse {
-  0% {
-    text-shadow: 0 0 5px currentColor;
-  }
-  100% {
-    text-shadow: 0 0 15px currentColor;
-  }
-}
-
-.pricing-features {
-  margin-bottom: 2rem;
-}
-
-.pricing-features li {
-  display: flex;
-  align-items: center;
-  margin-bottom: 0.75rem;
-  transition: transform 0.3s ease;
-}
-
-.pricing-features li:hover {
-  transform: translateX(5px);
-}
-
-.pricing-features i {
-  margin-right: 0.5rem;
-}
-
-/* Order Form Section */
-.payment-notice {
-  background: rgba(153, 0, 255, 0.1);
-  border: 1px solid rgba(153, 0, 255, 0.2);
-  border-radius: 4px;
-  padding: 1rem;
-  text-align: center;
-  margin-bottom: 1.5rem;
-  animation: notice-pulse 3s infinite alternate;
-}
-
-@keyframes notice-pulse {
-  0% {
-    box-shadow: 0 0 5px rgba(153, 0, 255, 0.2);
-  }
-  100% {
-    box-shadow: 0 0 15px rgba(153, 0, 255, 0.4);
-  }
 }
 
 /* Portfolio Section */
@@ -1509,7 +1443,185 @@ section {
   margin-bottom: 1rem;
 }
 
+/* Pricing Section */
+.pricing {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none"/><circle cx="50" cy="50" r="40" stroke="rgba(255, 0, 255, 0.1)" stroke-width="1" fill="none"/></svg>');
+  background-size: cover, 30px 30px;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.pricing-card {
+  position: relative;
+}
+
+.pricing-card.recommended {
+  transform: translateY(-20px);
+}
+
+.recommended-badge {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--cyber-purple);
+  color: var(--bg-color);
+  padding: 0.5rem 1rem;
+  border-radius: 2px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  z-index: 1;
+  box-shadow: 0 0 15px var(--cyber-purple);
+  animation: badge-glow 2s infinite alternate;
+}
+
+@keyframes badge-glow {
+  0% {
+    box-shadow: 0 0 5px var(--cyber-purple);
+  }
+  100% {
+    box-shadow: 0 0 15px var(--cyber-purple);
+  }
+}
+
+.pricing-header h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.pricing-header p {
+  color: var(--text-color-muted);
+  margin-bottom: 1.5rem;
+}
+
+.pricing-price {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  animation: price-pulse 2s infinite alternate;
+}
+
+@keyframes price-pulse {
+  0% {
+    text-shadow: 0 0 5px currentColor;
+  }
+  100% {
+    text-shadow: 0 0 15px currentColor;
+  }
+}
+
+.pricing-features {
+  margin-bottom: 2rem;
+}
+
+.pricing-features li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  transition: transform 0.3s ease;
+}
+
+.pricing-features li:hover {
+  transform: translateX(5px);
+}
+
+.pricing-features i {
+  margin-right: 0.5rem;
+}
+
+.add-ons-section {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  padding: 2rem;
+  border: 1px solid rgba(0, 255, 0, 0.2);
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.1);
+}
+
+.add-ons-section h3 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.add-ons-table-container {
+  overflow-x: auto;
+  margin-bottom: 2rem;
+}
+
+.add-ons-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.add-ons-table th,
+.add-ons-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(0, 255, 0, 0.2);
+}
+
+.add-ons-table th {
+  background: rgba(0, 255, 0, 0.1);
+  color: var(--cyber-green);
+  font-family: "Orbitron", sans-serif;
+}
+
+.add-ons-table tr:hover {
+  background: rgba(0, 255, 0, 0.05);
+}
+
+.payment-notice {
+  background: rgba(153, 0, 255, 0.1);
+  border: 1px solid rgba(153, 0, 255, 0.2);
+  border-radius: 4px;
+  padding: 1.5rem;
+  text-align: center;
+  animation: notice-pulse 3s infinite alternate;
+}
+
+@keyframes notice-pulse {
+  0% {
+    box-shadow: 0 0 5px rgba(153, 0, 255, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(153, 0, 255, 0.4);
+  }
+}
+
+/* Order Button Section */
+.order-button-section {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none"/><path d="M25,25 L75,75 M75,25 L25,75" stroke="rgba(0, 255, 0, 0.1)" stroke-width="1"/></svg>');
+  background-size: cover, 20px 20px;
+  text-align: center;
+  padding: 5rem 0;
+}
+
+.order-button-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.order-button-container h2 {
+  margin-bottom: 1.5rem;
+}
+
+.order-button-container p {
+  margin-bottom: 2rem;
+}
+
 /* Testimonials Section */
+.testimonials {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none"/><path d="M0,0 L100,100 M0,100 L100,0" stroke="rgba(255, 0, 255, 0.1)" stroke-width="1"/></svg>');
+  background-size: cover, 20px 20px;
+}
+
 .testimonials-slider {
   position: relative;
 }
@@ -1691,6 +1803,12 @@ section {
 }
 
 /* Contact Section */
+.contact {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none"/><circle cx="50" cy="50" r="40" stroke="rgba(0, 255, 255, 0.1)" stroke-width="1" fill="none"/></svg>');
+  background-size: cover, 30px 30px;
+}
+
 .contact-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -1998,7 +2116,6 @@ section {
   opacity: 1;
   transform: translateY(0) translateX(0) scale(1) rotateY(0);
 }
-
 
 /* Responsive Styles */
 @media (max-width: 992px) {
